@@ -1,0 +1,110 @@
+<main>
+    <article>
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact has-bg-image" aria-labelledby="contact-label"
+        style="background-image: url('../../assets/images/contact-bg.png')">
+        <div class="container">
+
+          <form action="" class="contact-form"  [formGroup]="contactForm" >
+
+            <h2 class="headline-sm" id="contact-label">Get in touch</h2>
+
+            <p class="contact-text body-md">
+              I would love to hear from you.
+            </p>
+
+            <div class="wrapper">
+
+              <div>
+                <label for="name" class="label">First name</label>
+                <small *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched">Name is Required*</small>
+                <input type="text" name="name" id="name" placeholder="Name *" required class="input-field" formControlName="name">
+                
+              </div>
+              
+              <div>
+                <label for="email" class="label">Your Email </label>
+                <small *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched">Email is Required*</small>
+                <input type="email" name="email" id="email" placeholder="Email *" required class="input-field" formControlName="email">
+                
+              </div>
+              
+            </div>
+
+            <label for="subject" class="label">Subject</label>
+            <small *ngIf="contactForm.get('subject').invalid && contactForm.get('subject').touched">Subject is Required*</small>
+            <input type="text" name="subject" id="subject" placeholder="Subject *" class="input-field" formControlName="subject">
+            
+           
+            <label for="message" class="label">Your message </label>
+            <textarea name="message" id="message" placeholder="Your message" required class="input-field" formControlName="message"></textarea>
+
+            <button type="reset" class="btn btn-tertiary" [disabled]="contactForm.invalid"  (click)="submitData(contactForm.value)">Send Message</button>
+            
+            <p class="output_message" *ngIf="isSubmit">{{submitMessage}}</p>
+          </form>
+
+          <div class="contact-content">
+
+            <ul class="contact-list">
+
+              <li class="contact-item">
+
+                <div class="item-icon" style="background-color: hsl(177, 39%, 72%)">
+                  <ion-icon name="call" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div>
+                  <p class="label-lg">Phone</p>
+
+                  <a class="body-lg">+91 9850397499</a>
+                </div>
+
+              </li>
+
+              <li class="contact-item">
+
+                <div class="item-icon" style="background-color: hsl(41, 99%, 64%)">
+                  <ion-icon name="mail" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div>
+                  <p class="label-lg">Mail</p>
+
+                  <a  class="body-lg">shelkepradeep76@gmail.com</a>
+                </div>
+
+              </li>
+
+              <li class="contact-item">
+
+                <div class="item-icon" style="background-color: hsl(19, 97%, 85%)">
+                  <ion-icon name="location" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div>
+                  <p class="label-lg">Visit My Address</p>
+
+                  <address class="body-lg">
+                    Chatrapati Sambhajinagar
+                  </address>
+                  <address class="body-lg">
+                    Maharashtra,India
+                  </address>
+                </div>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
