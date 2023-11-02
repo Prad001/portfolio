@@ -18,7 +18,5 @@ To run this project, install it locally using npm:
 
 ```
 $ npm install
-$ ng add @ionic/angular
-$ ng add @angular/fire
 $ npm start
 ```
