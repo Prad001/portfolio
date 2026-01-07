@@ -1,32 +1,31 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import astroIcon from 'astro-icon';
-import mdx from '@astrojs/mdx';
+import astroIcon from "astro-icon";
+import mdx from "@astrojs/mdx";
 import playformCompress from "@playform/compress";
-import vercel from "@astrojs/vercel/serverless";
 
-// https://astro.build/config
 export default defineConfig({
+  site: "https://shelkpradeep.in",
+
+  output: "static",
+
   integrations: [
     tailwind(),
     mdx(),
     astroIcon({
       include: {
         mdi: ["*"],
-        ri: ['*'],
-        'simple-icons': ['*'],
+        ri: ["*"],
+        "simple-icons": ["*"],
       },
     }),
     playformCompress({
       CSS: false,
       Image: false,
       Action: {
-        Passed: async () => true,  
+        Passed: async () => true,
       },
-    })
+    }),
   ],
-  output: 'server',
-  adapter: vercel(),
-  
 });
